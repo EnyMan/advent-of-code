@@ -29,7 +29,7 @@ func violates_rule(trial_sample string, part2 bool) bool {
 	return false
 }
 
-func calcualte_game_power(trials []string) int {
+func calcualte_game_power(trials []string, part2 bool) int {
 	min_counts := map[string]int{
 		"red":   0,
 		"green": 0,
@@ -49,12 +49,12 @@ func calcualte_game_power(trials []string) int {
 				min_counts[color] = countInt
 			}
 		}
-		fmt.Println(min_counts)
+		if part2 {
+			fmt.Println(min_counts)
+		}
 	}
 	return min_counts["red"] * min_counts["green"] * min_counts["blue"]
 }
-
-// Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 
 func parse_input(input []string, part2 bool) []int {
 	ok_ids := []int{}
@@ -68,7 +68,7 @@ func parse_input(input []string, part2 bool) []int {
 		game_id := header_splits[1]
 		trials := strings.Split(game_data, ";")
 		game_violation = false
-		game_power := calcualte_game_power(trials)
+		game_power := calcualte_game_power(trials, part2)
 		for _, trial := range trials {
 			trial_splits := strings.Split(trial, ",")
 			for _, trial_split := range trial_splits {

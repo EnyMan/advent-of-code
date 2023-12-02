@@ -25,7 +25,7 @@ func replace_words_with_numbers(line string) string {
 	return line
 }
 
-func parse_input(input []string) []int {
+func parse_input(input []string, part2 bool) []int {
 
 	calibration := []int{}
 
@@ -33,7 +33,9 @@ func parse_input(input []string) []int {
 	for _, line := range input {
 		line_numbers := []int{}
 		// replace words with numbers
-		line := replace_words_with_numbers(line)
+		if part2 {
+			line = replace_words_with_numbers(line)
+		}
 		for _, char := range line {
 			// add numbers to the line_numbers array
 			if unicode.IsDigit(char) {
@@ -55,9 +57,9 @@ func get_first_and_last_number(line []int) int {
 
 }
 
-func First(filename string) {
+func First(filename string, part2 bool) {
 	lines := helpers.ReadFile(filename)
-	coords := parse_input(lines)
+	coords := parse_input(lines, part2)
 	sum := 0
 	for _, coord := range coords {
 		sum += coord
