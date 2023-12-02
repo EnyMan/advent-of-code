@@ -1,37 +1,11 @@
-package main
+package first
 
 import (
+	helpers "advent/utils"
 	"fmt"
-	"os"
 	"strings"
 	"unicode"
 )
-
-func read_file() []string {
-	file, err := os.Open("01-input.txt")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-	}
-	defer file.Close()
-
-	// get file size
-	stat, err := file.Stat()
-	if err != nil {
-		fmt.Println("Error getting file size:", err)
-	}
-
-	// read the file
-	bs := make([]byte, stat.Size())
-	_, err = file.Read(bs)
-	if err != nil {
-		fmt.Println("Error reading file:", err)
-	}
-
-	lines := string(bs)
-
-	// split lines on new line to create a array of strings
-	return strings.Split(lines, "\n")
-}
 
 func replace_words_with_numbers(line string) string {
 	digits := map[string]string{
@@ -81,8 +55,9 @@ func get_first_and_last_number(line []int) int {
 
 }
 
-func main() {
-	lines := read_file()
+func First(filename string) {
+
+	lines := helpers.ReadFile(filename)
 	coords := parse_input(lines)
 	sum := 0
 	for _, coord := range coords {
