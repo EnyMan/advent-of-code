@@ -56,7 +56,6 @@ func get_first_and_last_number(line []int) int {
 }
 
 func First(filename string) {
-
 	lines := helpers.ReadFile(filename)
 	coords := parse_input(lines)
 	sum := 0
