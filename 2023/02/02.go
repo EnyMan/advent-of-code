@@ -20,9 +20,6 @@ func violates_rule(trial_sample string, part2 bool) bool {
 		fmt.Println(err)
 		return true
 	}
-	if !part2 {
-		fmt.Println(countInt, color)
-	}
 	if countInt > counts[color] {
 		return true
 	}
@@ -49,9 +46,6 @@ func calcualte_game_power(trials []string, part2 bool) int {
 				min_counts[color] = countInt
 			}
 		}
-		if part2 {
-			fmt.Println(min_counts)
-		}
 	}
 	return min_counts["red"] * min_counts["green"] * min_counts["blue"]
 }
@@ -61,7 +55,7 @@ func parse_input(input []string, part2 bool) []int {
 	game_powers := []int{}
 	game_violation := bool(false)
 	for _, line := range input {
-		fmt.Println(line)
+		// fmt.Println(line)
 		line_splits := strings.Split(line, ":")
 		header, game_data := line_splits[0], line_splits[1]
 		header_splits := strings.Split(header, " ")
