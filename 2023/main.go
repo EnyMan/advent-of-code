@@ -4,6 +4,7 @@ import (
 	first "advent/01"
 	second "advent/02"
 	third "advent/03"
+	forth "advent/04"
 	"flag"
 	"fmt"
 )
@@ -46,6 +47,16 @@ func main() {
 			third.Third("03/sample.txt", true)
 		} else {
 			third.Third("03/input.txt", *partPtr)
+		}
+	case 4:
+		if *samplePtr {
+			forth.Forth("04/sample.txt", false)
+			fmt.Println()
+			fmt.Println("Part 2")
+			fmt.Println()
+			forth.Forth("04/sample.txt", true)
+		} else {
+			forth.Forth("04/input.txt", *partPtr)
 		}
 	default:
 		fmt.Println("No task selected")
