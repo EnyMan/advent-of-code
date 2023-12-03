@@ -31,3 +31,30 @@ func ReadFile(input_filename string) []string {
 	// split lines on new line to create a array of strings
 	return strings.Split(lines, "\n")
 }
+
+func ToInt(s string) int {
+	var i int
+	fmt.Sscanf(s, "%d", &i)
+	return i
+}
+
+func IsNumber(s string) bool {
+	_, err := fmt.Sscanf(s, "%d", new(int))
+	return err == nil
+}
+
+func Sum(numbers []int) int {
+	sum := 0
+	for _, number := range numbers {
+		sum += number
+	}
+	return sum
+}
+
+func Multiply(numbers []int) int {
+	multiply := 1
+	for _, number := range numbers {
+		multiply *= number
+	}
+	return multiply
+}
