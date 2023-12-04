@@ -39,7 +39,7 @@ func parse_line(line string, part2 bool) [][]int {
 		}
 	}
 	clones := []int{}
-	for index, _ := range matches {
+	for index := range matches {
 		clones = append(clones, card_number+index+1)
 	}
 	return [][]int{{int(math.Pow(2, float64(len(matches)-1)))}, clones}
