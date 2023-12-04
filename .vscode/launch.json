@@ -61,7 +61,7 @@
             "args": ["--task=4", "--sample"]
         },
         {
-            "name": "Task 4 - part 1",
+            "name": "Task 4",
             "type": "go",
             "request": "launch",
             "mode": "auto",
@@ -69,34 +69,28 @@
             "args": ["--task=4"]
         },
         {
-            "name": "Task 4 - part 2",
-            "type": "go",
-            "request": "launch",
-            "mode": "auto",
-            "program": "${workspaceFolder}/2023/main.go",
-            "args": ["--task=4", "--part2"]
-        },
-        {
             "name": "Task 5 - sample",
             "type": "go",
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}/2023/main.go",
-            "args": ["--sample"]
+            "args": ["--task=5", "--sample"]
         },
         {
             "name": "Task 5 - part 1",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceFolder}/2023/main.go"
+            "program": "${workspaceFolder}/2023/main.go",
+            "args": ["--task=5"]
         },
         {
             "name": "Task 5 - part 2",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceFolder}/2023/main.go"
+            "program": "${workspaceFolder}/2023/main.go",
+            "args": ["--task=5", "--part2"]
         }
     ]
 }

@@ -5,6 +5,7 @@ import (
 	second "advent/02"
 	third "advent/03"
 	forth "advent/04"
+	fifth "advent/05"
 	"flag"
 	"fmt"
 )
@@ -60,7 +61,18 @@ func main() {
 			PrintPart2()
 			forth.Forth("04/sample.txt", true)
 		} else {
-			forth.Forth("04/input.txt", *partPtr)
+			forth.Forth("04/input.txt", false)
+			PrintPart2()
+			forth.Forth("04/input.txt", true)
+		}
+
+	case 5:
+		if *samplePtr {
+			fifth.Fifth("05/sample.txt", false)
+			PrintPart2()
+			fifth.Fifth("05/sample.txt", true)
+		} else {
+			fifth.Fifth("05/input.txt", *partPtr)
 		}
 	default:
 		fmt.Println("No task selected")
