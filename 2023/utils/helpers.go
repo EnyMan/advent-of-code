@@ -33,6 +33,7 @@ func ReadFile(input_filename string) []string {
 }
 
 func ToInt(s string) int {
+	s = strings.TrimSpace(s)
 	var i int
 	fmt.Sscanf(s, "%d", &i)
 	return i
