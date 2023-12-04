@@ -9,6 +9,12 @@ import (
 	"fmt"
 )
 
+func PrintPart2() {
+	fmt.Println()
+	fmt.Println("Part 2")
+	fmt.Println()
+}
+
 func main() {
 	// Define flags
 	intPtr := flag.Int("task", 1, "The task to run")
@@ -21,39 +27,37 @@ func main() {
 	case 1:
 		if *samplePtr {
 			first.First("01/sample.txt", false)
-			fmt.Println()
-			fmt.Println("Part 2")
-			fmt.Println()
+			PrintPart2()
 			first.First("01/sample.txt", true)
 		} else {
-			first.First("01/input.txt", *partPtr)
+			first.First("01/input.txt", false)
+			PrintPart2()
+			first.First("01/input.txt", true)
 		}
 	case 2:
 		if *samplePtr {
 			second.Second("02/sample.txt", false)
-			fmt.Println()
-			fmt.Println("Part 2")
-			fmt.Println()
+			PrintPart2()
 			second.Second("02/sample.txt", true)
 		} else {
-			second.Second("02/input.txt", *partPtr)
+			second.Second("02/input.txt", false)
+			PrintPart2()
+			second.Second("02/input.txt", true)
 		}
 	case 3:
 		if *samplePtr {
 			third.Third("03/sample.txt", false)
-			fmt.Println()
-			fmt.Println("Part 2")
-			fmt.Println()
+			PrintPart2()
 			third.Third("03/sample.txt", true)
 		} else {
-			third.Third("03/input.txt", *partPtr)
+			third.Third("03/input.txt", false)
+			PrintPart2()
+			third.Third("03/input.txt", true)
 		}
 	case 4:
 		if *samplePtr {
 			forth.Forth("04/sample.txt", false)
-			fmt.Println()
-			fmt.Println("Part 2")
-			fmt.Println()
+			PrintPart2()
 			forth.Forth("04/sample.txt", true)
 		} else {
 			forth.Forth("04/input.txt", *partPtr)
