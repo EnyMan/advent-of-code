@@ -59,3 +59,20 @@ func Multiply(numbers []int) int {
 	}
 	return multiply
 }
+
+func ArrayToInt(numbers []string) []int {
+	int_numbers := []int{}
+	for _, number := range numbers {
+		int_numbers = append(int_numbers, ToInt(number))
+	}
+	return int_numbers
+}
+
+func FindInList(needle string, haystack []string) bool {
+	for _, element := range haystack {
+		if needle == element {
+			return true
+		}
+	}
+	return false
+}
