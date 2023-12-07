@@ -8,6 +8,7 @@ import (
 	fifth "advent/05"
 	sixth "advent/06"
 	seventh "advent/07"
+	eighth "advent/08"
 	"flag"
 	"fmt"
 )
@@ -22,7 +23,7 @@ func main() {
 	// Define flags
 	intPtr := flag.Int("task", 1, "The task to run")
 	samplePtr := flag.Bool("sample", false, "Run sample?")
-	partPtr := flag.Bool("part2", false, "Run second part?")
+	// partPtr := flag.Bool("part2", false, "Run second part?")
 
 	flag.Parse()
 
@@ -93,7 +94,19 @@ func main() {
 			PrintPart2()
 			seventh.Seventh("07/sample.txt", true)
 		} else {
-			seventh.Seventh("07/input.txt", *partPtr)
+			seventh.Seventh("07/input.txt", false)
+			PrintPart2()
+			seventh.Seventh("07/input.txt", true)
+		}
+	case 8:
+		if *samplePtr {
+			eighth.Eighth("08/sample.txt", false)
+			PrintPart2()
+			eighth.Eighth("08/sample.txt", true)
+		} else {
+			eighth.Eighth("08/input.txt", false)
+			//PrintPart2()
+			//eighth.Eighth("08/input.txt", true)
 		}
 	default:
 		fmt.Println("No task selected")
