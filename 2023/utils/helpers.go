@@ -76,3 +76,40 @@ func FindInList(needle string, haystack []string) bool {
 	}
 	return false
 }
+
+func Enqueue(queue []string, element string) []string {
+	queue = append(queue, element)
+	// fmt.Println("Enqueued:", element)
+	return queue
+}
+
+func Dequeue(queue []string) (string, []string) {
+	element := queue[0]
+	if len(queue) == 1 {
+		var tmp = []string{}
+		return element, tmp
+
+	}
+
+	return element, queue[1:]
+}
+
+func GCD(a, b int) int {
+	for b != 0 {
+		t := b
+		b = a % b
+		a = t
+	}
+	return a
+}
+
+// find Least Common Multiple (LCM) via GCD
+func LCM(a int, b int, integers []int) int {
+	result := a * b / GCD(a, b)
+
+	for i := 0; i < len(integers); i++ {
+		result = LCM(result, integers[i], integers[i+1:])
+	}
+
+	return result
+}

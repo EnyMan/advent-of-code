@@ -102,11 +102,11 @@ func main() {
 		if *samplePtr {
 			eighth.Eighth("08/sample.txt", false)
 			PrintPart2()
-			eighth.Eighth("08/sample.txt", true)
+			eighth.Eighth("08/sample2.txt", true)
 		} else {
 			eighth.Eighth("08/input.txt", false)
-			//PrintPart2()
-			//eighth.Eighth("08/input.txt", true)
+			PrintPart2()
+			eighth.Eighth("08/input.txt", true)
 		}
 	default:
 		fmt.Println("No task selected")
