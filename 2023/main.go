@@ -9,6 +9,7 @@ import (
 	sixth "advent/06"
 	seventh "advent/07"
 	eighth "advent/08"
+	ninth "advent/09"
 	"flag"
 	"fmt"
 )
@@ -107,6 +108,16 @@ func main() {
 			eighth.Eighth("08/input.txt", false)
 			PrintPart2()
 			eighth.Eighth("08/input.txt", true)
+		}
+	case 9:
+		if *samplePtr {
+			ninth.Ninth("09/sample.txt", false)
+			PrintPart2()
+			ninth.Ninth("09/sample.txt", true)
+		} else {
+			ninth.Ninth("09/input.txt", false)
+			PrintPart2()
+			ninth.Ninth("09/input.txt", true)
 		}
 	default:
 		fmt.Println("No task selected")

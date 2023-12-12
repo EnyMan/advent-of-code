@@ -131,6 +131,22 @@
             "mode": "auto",
             "program": "${workspaceFolder}/2023/main.go",
             "args": ["--task=8"]
+        },
+        {
+            "name": "Task 9 - sample",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/2023/main.go",
+            "args": ["--task=9", "--sample"]
+        },
+        {
+            "name": "Task 9",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/2023/main.go",
+            "args": ["--task=9"]
         }
     ]
 }
